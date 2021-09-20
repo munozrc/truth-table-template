@@ -1,0 +1,42 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input:not(:first-child) .input__label {
+  margin-top: 12px;
+}
+
+.input__label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #121212;
+  opacity: 0.6;
+}
+
+.input__element {
+  width: 100%;
+  max-height: 40px;
+  padding: 10px 14px;
+  font-size: 1.2em;
+  color: #fafafa;
+  background-color: #121212;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.input__element:focus {
+  box-shadow: inset 0px 0px 0px 1.4px #61afef;
+}
+
+.input__wrapper {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
