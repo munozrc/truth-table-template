@@ -3,6 +3,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/truth-table-template',
   esbuild: {
     jsxFactory: '_jsx',
     jsxFragment: '_jsxFragment',
