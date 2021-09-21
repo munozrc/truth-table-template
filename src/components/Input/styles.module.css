@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper:not(:first-child) .label {
+  margin-top: 12px;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #121212;
+  opacity: 0.8;
+}
+
+.element {
+  width: 100%;
+  max-height: 40px;
+  padding: 10px 14px;
+  font-size: 1.2em;
+  color: #121212;
+  background-color: #fafafa;
+  border: 2px solid #121212;
+  border-radius: 4px;
+  outline: none;
+}
+
+.element:focus {
+  box-shadow: 0px 0px 0px 2px #61afef;
+}

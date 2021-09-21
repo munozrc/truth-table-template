@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, useState } from 'react'
-import './styles.css'
+import styles from './styles.module.css'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   labelValue: string
@@ -7,9 +7,9 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 
 function Input({ labelValue, ...props }: Props) {
   return (
-    <div className="input">
-      <label className="input__label">{labelValue}</label>
-      <input className="input__element" spellCheck="false" {...props} />
+    <div className={styles.wrapper}>
+      <label className={styles.label}>{labelValue}</label>
+      <input className={styles.element} spellCheck="false" {...props} />
     </div>
   )
 }
