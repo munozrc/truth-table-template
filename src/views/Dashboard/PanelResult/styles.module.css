@@ -1,0 +1,4 @@
+.wrapper {
+  grid-area: "result";
+  background-color: #0a0c10;
+}
