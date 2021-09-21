@@ -1,4 +1,6 @@
 .wrapper {
-  grid-area: "result";
-  background-color: #0a0c10;
+  grid-area: result;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
