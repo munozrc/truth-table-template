@@ -1,11 +1,11 @@
-import React, { FC } from "react";
-import Input from "../../components/Input";
+import React, { FC } from 'react'
+import Input from '../../components/Input'
 
 const Home: FC<{}> = () => {
   return (
     <div>
       <form>
-        <Input type="number" labelValue="Número de entradas" />
+        <Input type='number' labelValue='Número de entradas' />
       </form>
     </div>
   )
