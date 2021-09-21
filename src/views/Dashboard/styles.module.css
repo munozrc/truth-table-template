@@ -1,0 +1,20 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  grid-template-rows: 1fr;
+  grid-template-areas: "result options"
+  "result options";
+}
+
+.panel__result {
+  grid-area: "result";
+  background-color: #0a0c10;
+}
+
+.panel__options {
+  grid-area: "options";
+  background-color: #0a0c10;
+  border-left: 2px solid #2d333b;
+}
