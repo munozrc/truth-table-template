@@ -3,6 +3,26 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 400px;
-  grid-template-rows: 1fr;
-  grid-template-areas: "result options" "result options";
+  grid-template-rows: 80px 1fr;
+  grid-template-areas: "header options" "result options";
+}
+
+.wrapper__header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.header__title {
+  color: #fafafa;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto;
+    grid-template-areas: "header" "result" "options";
+  }
 }
