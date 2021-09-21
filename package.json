@@ -24,6 +24,11 @@
     "vite": "2.5.4"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser",
+      "project": "./tsconfig.json",
+      "sourceType": "module"
+    },
     "extends": [
       "./node_modules/ts-standard/eslintrc.json"
     ]
