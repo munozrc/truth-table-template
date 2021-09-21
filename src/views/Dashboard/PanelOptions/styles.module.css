@@ -1,0 +1,5 @@
+.wrapper {
+  grid-area: "options";
+  background-color: #0a0c10;
+  border-left: 2px solid #2d333b;
+}
