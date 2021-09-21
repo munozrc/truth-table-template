@@ -1,0 +1,28 @@
+.button {
+  width: 100%;
+  padding: 11.5px 14px;
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.primary {
+  background-color: #386dca;
+  color: #cdd9e5;
+  transition: background-color .3s ease;
+}
+
+.primary:hover {
+  background-color: #407feb;
+}
+
+.flat {
+  width: 1.3em;
+  height: 1.3em;
+  padding: 0px;
+  margin-top: 0px;
+  transition: opacity 0.3s ease;
+}
+
+.flat:hover {
+  opacity: 0.8;
+}
