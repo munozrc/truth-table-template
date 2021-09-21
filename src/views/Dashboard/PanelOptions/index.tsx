@@ -4,7 +4,9 @@ import styles from './styles.module.css'
 const PanelOptions: FC<{}> = () => {
   return (
     <section className={styles.wrapper}>
-      <h2>Opciones</h2>
+      <header className={styles.header}>
+        <h4 className={styles.header__title}>Opciones</h4>
+      </header>
     </section>
   )
 }
