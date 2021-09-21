@@ -1,10 +1,12 @@
-import React from 'react'
-import Home from './views/Home'
+import React, { FC } from 'react'
+import Dashboard from './views/Dashboard'
 
-function App () {
-  return <main className="container">
-    <Home />
-  </main>
+const App: FC<{}> = () => {
+  return (
+    <main className='container'>
+      <Dashboard />
+    </main>
+  )
 }
 
 export default App
