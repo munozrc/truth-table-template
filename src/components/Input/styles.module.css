@@ -15,7 +15,7 @@
   font-weight: 600;
   line-height: 1.4;
   text-transform: uppercase;
-  color: #121212;
+  color: #fafafa;
   opacity: 0.8;
 }
 
@@ -24,13 +24,13 @@
   max-height: 40px;
   padding: 10px 14px;
   font-size: 1.2em;
-  color: #121212;
-  background-color: #fafafa;
-  border: 2px solid #121212;
+  color: #fafafa;
+  background-color: #141414;
+  border: 2px solid #fafafa;
   border-radius: 4px;
   outline: none;
 }
 
 .element:focus {
-  box-shadow: 0px 0px 0px 2px #61afef;
+  box-shadow: 0px 0px 0px 2px #ffd104;
 }
