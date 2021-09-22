@@ -9,7 +9,10 @@ const InputColor: FC<Props> = ({ labelValue, ...props }) => {
   return (
     <div className={styles.wrapper}>
       <label className={styles.label}>{labelValue}</label>
-      <input className={styles.element} spellCheck='false' {...props} type='color' />
+      <div className={styles.wrapper__input}>
+        <input className={styles.element} {...props} type='color' />
+        <span className={styles.display}>{props.value}</span>
+      </div>
     </div>
   )
 }
