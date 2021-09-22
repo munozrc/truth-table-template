@@ -18,3 +18,7 @@
   line-height: 1.2;
   font-weight: 600;
 }
+
+.panel__wrapper {
+  padding: 30px;
+}
