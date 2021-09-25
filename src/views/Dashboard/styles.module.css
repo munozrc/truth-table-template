@@ -11,7 +11,8 @@
   grid-area: header;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  justify-content: space-between;
+  padding: 0px 30px;
 }
 
 .header__title {
@@ -19,10 +20,19 @@
   line-height: 1.2;
 }
 
+.wrapper__toolbar {
+  display: flex;
+  gap: 18px;
+}
+
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: 80px auto;
     grid-template-areas: "header" "result" "options";
+  }
+
+  .header__title {
+    font-size: 1.6em;
   }
 }
