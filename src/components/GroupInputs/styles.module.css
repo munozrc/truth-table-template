@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #fafafa;
+  opacity: 0.6;
+}
