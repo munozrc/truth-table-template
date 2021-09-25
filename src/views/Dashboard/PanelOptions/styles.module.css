@@ -22,3 +22,10 @@
 .panel__wrapper {
   padding: 30px;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    border-top: 2px solid #2d333b;
+    border-left: none;
+  }
+}
