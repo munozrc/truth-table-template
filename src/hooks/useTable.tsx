@@ -4,21 +4,21 @@ import { styleProperties } from '../types'
 
 interface ReturnType {
   styleInitialVariables: styleProperties
-  changeColor: (property: string, value: string) => void
+  changeStyles: (element: string, values: styleProperties) => void
 }
 
 function useTable (): ReturnType {
   const { tableSettings, changeTableSettings } = useContext(TableContext)
   const { styleInitialVariables } = tableSettings
 
-  const changeColor = useCallback((property: string, value: string) => {
+  const changeStyles = useCallback((element: string, values: styleProperties) => {
     changeTableSettings(prev => {
-      const newSettings = { ...prev, [property]: value }
+      const newSettings = { ...prev, [element]: values }
       return newSettings
     })
   }, [])
 
-  return { styleInitialVariables, changeColor }
+  return { styleInitialVariables, changeStyles }
 }
 
 export default useTable
