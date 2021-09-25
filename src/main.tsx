@@ -5,4 +5,4 @@ import App from './App'
 import './styles/index.css'
 import './styles/global.css'
 
-ReactDOM.render(<App />,  document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))

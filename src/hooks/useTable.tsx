@@ -1,5 +1,5 @@
 import { useCallback, useContext } from 'react'
-import TableContext from '../contexts/tableContext'
+import TableContext from '../contexts/TableContext'
 import { styleProperties } from '../types'
 
 interface ReturnType {
