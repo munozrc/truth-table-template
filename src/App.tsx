@@ -1,10 +1,13 @@
 import React, { FC } from 'react'
+import { TableProvider } from './contexts/tableContext'
 import Dashboard from './views/Dashboard'
 
 const App: FC<{}> = () => {
   return (
     <main className='container'>
-      <Dashboard />
+      <TableProvider>
+        <Dashboard />
+      </TableProvider>
     </main>
   )
 }
