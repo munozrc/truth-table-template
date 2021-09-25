@@ -4,7 +4,7 @@ import useField from '../../../hooks/useField'
 import styles from './styles.module.css'
 
 const PanelOptions: FC<{}> = () => {
-  const color = useField('#ccc')
+  const color = useField('color', '#04AA6D')
   return (
     <section className={styles.wrapper}>
       <header className={styles.header}>
