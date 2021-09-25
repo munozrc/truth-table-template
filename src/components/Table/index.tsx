@@ -14,7 +14,7 @@ const Table = forwardRef<HTMLTableElement>((_props, ref) => {
           <td className={styles.td}>0</td>
           <td className={styles.td}>1</td>
           <td className={styles.td}>1</td>
-          <td className={styles.td}>A'B</td>
+          <td className={styles.td__expression}>A'B</td>
         </tr>
       </tbody>
     </table>
