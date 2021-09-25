@@ -8,6 +8,7 @@ import styles from './styles.module.css'
 const PanelOptions: FC<{}> = () => {
   const color = useField('color', '#fafafa')
   const bgColor = useField('color', '#04aa6d')
+
   return (
     <section className={styles.wrapper}>
       <header className={styles.header}>
@@ -15,7 +16,7 @@ const PanelOptions: FC<{}> = () => {
       </header>
       <div className={styles.panel__wrapper}>
         <GroupInputs labelValue='Variables Iniciales'>
-          <Input />
+          <Input type='number' />
           <InputColor {...bgColor} />
           <InputColor {...color} />
         </GroupInputs>
