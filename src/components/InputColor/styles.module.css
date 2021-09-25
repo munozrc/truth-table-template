@@ -10,7 +10,7 @@
 }
 
 .label {
-  opacity: 0.8;
+  opacity: 0.6;
   display: inline-block;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -22,20 +22,24 @@
 
 .display {
   width: 100%;
+  padding: 6px 8px;
   text-transform: uppercase;
   font-size: 1.3em;
-  line-height: 1.2;
+  line-height: 1;
   color: #fafafa;
+  border: solid 2px #2d333b;
+  border-radius: 4px;
 }
 
 .element {
   height: 24px;
-  width: 40px;
-  margin-right: 10px;
-  border: 2px solid #2d333b;
+  width: 28px;
+  margin-right: 12px;
+  border: none;
   outline: none;
-  border-radius: 0px;
+  border-radius: 4px;
   -webkit-appearance: none;
+  box-shadow: 0px 0px 0px 3px #2d333b;
 }
 
 .element::-webkit-color-swatch-wrapper {
@@ -43,7 +47,7 @@
 }
 .element::-webkit-color-swatch {
   border: none;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 
 .wrapper__input {
