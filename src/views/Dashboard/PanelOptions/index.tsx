@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import Input from '../../../components/Input'
 import InputColor from '../../../components/InputColor'
 import useField from '../../../hooks/useField'
 import styles from './styles.module.css'
@@ -11,7 +12,9 @@ const PanelOptions: FC<{}> = () => {
         <h4 className={styles.header__title}>Opciones</h4>
       </header>
       <div className={styles.panel__wrapper}>
-        <InputColor labelValue='Variables Iniciales' {...color} />
+        <Input labelValue='Variables Iniciales' />
+        <InputColor labelValue='Background' {...color} />
+        <InputColor labelValue='Foreground' {...color} />
       </div>
     </section>
   )

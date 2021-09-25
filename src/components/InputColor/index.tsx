@@ -8,10 +8,9 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 const InputColor: FC<Props> = ({ labelValue, ...props }) => {
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label}>{labelValue}</label>
       <div className={styles.wrapper__input}>
         <input className={styles.element} {...props} type='color' />
-        <span className={styles.display}>{props.value}</span>
+        <label className={styles.label}>{labelValue}</label>
       </div>
     </div>
   )
