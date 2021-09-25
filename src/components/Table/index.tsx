@@ -8,9 +8,22 @@ const Table = forwardRef<HTMLTableElement>((_props, ref) => {
     <table ref={ref} className={styles.table}>
       <tbody>
         <tr>
-          <th className={styles.th} style={{ backgroundColor: styleInitialVariables.bgColor }}>A</th>
-          <th className={styles.th}>B</th>
-          <th className={styles.th} colSpan={2}>X</th>
+          <th
+            className={styles.th}
+            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+          >A
+          </th>
+          <th
+            className={styles.th}
+            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+          >B
+          </th>
+          <th
+            className={styles.th}
+            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+            colSpan={2}
+          >X
+          </th>
         </tr>
         <tr>
           <td className={styles.td}>0</td>
