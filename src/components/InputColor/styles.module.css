@@ -10,30 +10,31 @@
 }
 
 .label {
+  opacity: 0.8;
   display: inline-block;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
   font-size: 0.75em;
   font-weight: 600;
   line-height: 1.4;
-  text-transform: uppercase;
   color: #fafafa;
-  opacity: 0.8;
 }
 
 .display {
   width: 100%;
-  padding: 10px;
-  color: #fafafa;
-  line-height: 1.2;
+  text-transform: uppercase;
   font-size: 1.3em;
+  line-height: 1.2;
+  color: #fafafa;
 }
 
 .element {
-  border-radius: 0px;
   height: 24px;
   width: 40px;
+  margin-right: 10px;
   border: 2px solid #2d333b;
   outline: none;
+  border-radius: 0px;
   -webkit-appearance: none;
 }
 
