@@ -1,28 +1,16 @@
 .wrapper {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper:not(:first-child) {
-  margin-top: 16px;
-}
-
-.label {
-  opacity: 0.4;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #fafafa;
+  margin-left: 16px;
 }
 
 .element {
   height: 24px;
-  width: 28px;
-  margin-right: 12px;
-  margin-left: 3px;
+  width: 24px;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -36,11 +24,4 @@
 .element::-webkit-color-swatch {
   border: none;
   border-radius: 4px;
-}
-
-.wrapper__input {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
