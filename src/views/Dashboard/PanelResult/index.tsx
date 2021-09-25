@@ -1,11 +1,15 @@
-import React, { FC } from 'react'
+import React, { FC, RefObject } from 'react'
 import Table from '../../../components/Table'
 import styles from './styles.module.css'
 
-const PanelResult: FC<{}> = () => {
+interface Props {
+  refTable: RefObject<any>
+}
+
+const PanelResult: FC<Props> = ({ refTable }) => {
   return (
     <section className={styles.wrapper}>
-      <Table />
+      <Table ref={refTable} />
     </section>
   )
 }

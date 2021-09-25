@@ -1,9 +1,9 @@
-import React, { FC } from 'react'
+import React, { forwardRef } from 'react'
 import styles from './styles.module.css'
 
-const Table: FC<{}> = () => {
+const Table = forwardRef<HTMLTableElement>((_props, ref) => {
   return (
-    <table className={styles.table}>
+    <table ref={ref} className={styles.table}>
       <tbody>
         <tr>
           <th className={styles.th}>A</th>
@@ -19,6 +19,6 @@ const Table: FC<{}> = () => {
       </tbody>
     </table>
   )
-}
+})
 
 export default Table
