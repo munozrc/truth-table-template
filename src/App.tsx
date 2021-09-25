@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { TableProvider } from './contexts/tableContext'
+import { TableProvider } from './contexts/TableContext'
 import Dashboard from './views/Dashboard'
 
 const App: FC<{}> = () => {
