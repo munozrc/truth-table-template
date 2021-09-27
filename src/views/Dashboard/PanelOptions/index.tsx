@@ -9,7 +9,7 @@ const PanelOptions: FC<{}> = () => {
         <h4 className={styles.header__title}>Opciones</h4>
       </header>
       <div className={styles.panel__wrapper}>
-        <OptionsInput labelValue='Entradas Iniciales' name='styleInitialVariables' />
+        <OptionsInput labelValue='Entradas Iniciales' name='stylesEntries' />
       </div>
     </section>
   )
