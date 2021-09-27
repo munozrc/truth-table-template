@@ -1,26 +1,32 @@
 import React, { forwardRef } from 'react'
-import useTable from '../../hooks/useTable'
+import { styleProperties, TableData } from '../../types'
 import styles from './styles.module.css'
 
-const Table = forwardRef<HTMLTableElement>((_props, ref) => {
-  const { styleInitialVariables } = useTable()
+export interface PropsTable {
+  stylesEntries: styleProperties
+  stylesOutputs: styleProperties
+  tableData: TableData
+}
+
+const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
+  const { stylesEntries } = props
   return (
     <table ref={ref} className={styles.table}>
       <tbody>
         <tr>
           <th
             className={styles.th}
-            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+            style={{ backgroundColor: stylesEntries.bgColor, color: stylesEntries.color }}
           >A
           </th>
           <th
             className={styles.th}
-            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+            style={{ backgroundColor: stylesEntries.bgColor, color: stylesEntries.color }}
           >B
           </th>
           <th
             className={styles.th}
-            style={{ backgroundColor: styleInitialVariables.bgColor, color: styleInitialVariables.color }}
+            style={{ backgroundColor: stylesEntries.bgColor, color: stylesEntries.color }}
             colSpan={2}
           >X
           </th>
