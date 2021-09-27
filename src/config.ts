@@ -6,8 +6,9 @@ export const initialTableData: TableData = {
 }
 
 export const defaultValues: TableSettings = {
-  styleInitialVariables: { color: '#fafafa', bgColor: '#04aa6d' },
-  styleOneValue: { color: '#fafafa', bgColor: '#04aa6d' },
-  styleZeroValue: { color: '#fafafa', bgColor: '#04aa6d' },
+  stylesEntries: { color: '#fafafa', bgColor: '#04aa6d' },
+  stylesOutputs: { color: '#fafafa', bgColor: '#04aa6d' },
+  stylesOneValue: { color: '#fafafa', bgColor: '#04aa6d' },
+  stylesZeroValue: { color: '#fafafa', bgColor: '#04aa6d' },
   zoom: 1.4
 }
