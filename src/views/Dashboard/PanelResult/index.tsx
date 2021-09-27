@@ -11,12 +11,14 @@ const PanelResult: FC<Props> = ({ refTable }) => {
   const { stylesEntries, stylesOutputs, tableData } = useTable()
   return (
     <section className={styles.wrapper}>
-      <Table
-        ref={refTable}
-        stylesEntries={stylesEntries}
-        stylesOutputs={stylesOutputs}
-        tableData={tableData}
-      />
+      <div className={styles.wrapper__table}>
+        <Table
+          ref={refTable}
+          stylesEntries={stylesEntries}
+          stylesOutputs={stylesOutputs}
+          tableData={tableData}
+        />
+      </div>
     </section>
   )
 }
