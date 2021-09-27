@@ -2,7 +2,6 @@
   border-collapse: collapse;
   background-color: #fafafa;
   font-size: 1.1em;
-  transform: scale(1.4);
 }
 
 .th, .td, .td__expression {
