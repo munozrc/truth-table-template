@@ -1,7 +1,7 @@
 import { TableData, TableSettings } from './types'
 
 export const initialTableData: TableData = {
-  initialEntries: 2,
+  initialEntries: ['A', 'B'],
   outputs: { x: [0, 0, 0, 0] }
 }
 

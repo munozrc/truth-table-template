@@ -11,6 +11,6 @@ export interface TableSettings {
 }
 
 export interface TableData {
-  initialEntries: number
+  initialEntries: string[]
   outputs: {[key: string]: number[]}
 }
