@@ -3,9 +3,10 @@ export interface styleProperties {
   bgColor: string
 }
 export interface TableSettings {
-  styleInitialVariables: styleProperties
-  styleOneValue: styleProperties
-  styleZeroValue: styleProperties
+  stylesEntries: styleProperties
+  stylesOutputs: styleProperties
+  stylesOneValue: styleProperties
+  stylesZeroValue: styleProperties
   zoom: number
 }
 
