@@ -1,8 +1,9 @@
 import { TableData, TableSettings } from './types'
+import { generateArrayNumbers } from './utils'
 
 export const initialTableData: TableData = {
   initialEntries: ['A', 'B'],
-  outputs: { x: [0, 0, 0, 0] }
+  outputs: { x: generateArrayNumbers(2) }
 }
 
 export const defaultValues: TableSettings = {
