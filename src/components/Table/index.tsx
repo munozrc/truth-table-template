@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react'
 import { styleProperties, TableData } from '../../types'
+import { generateArrayNumbers, parseBinary } from '../../utils'
+import OutputItem from './OutputItem'
 import styles from './styles.module.css'
 
 export interface PropsTable {
@@ -37,16 +39,24 @@ const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
           }
         </tr>
         {
-          Object.keys(tableData.outputs).map((output) => (
-            tableData.outputs[output].map((value, index) => (
-              <tr key={`${output}-${index}`}>
-                <td className={styles.td}>0</td>
-                <td className={styles.td}>1</td>
-                <td className={styles.td}>{value}</td>
-                <td className={styles.td__expression} />
+          generateArrayNumbers(tableData.initialEntries.length).map(value => {
+            const binaryNumber = parseBinary(value, tableData.initialEntries.length)
+            console.log({ binaryNumber, value })
+            return (
+              <tr key={`row-${value}`}>
+                {
+                  binaryNumber.map((digit, index) => (
+                    <td key={`number-${index}-${digit}`} className={styles.td}>{digit}</td>
+                  ))
+                }
+                {
+                  Object.keys(tableData.outputs).map((output) => (
+                    <OutputItem key={`hey-${output}`} />
+                  ))
+                }
               </tr>
-            ))
-          ))
+            )
+          })
         }
       </tbody>
     </table>
