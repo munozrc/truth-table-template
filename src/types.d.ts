@@ -1,3 +1,7 @@
+export interface styleProperties {
+  color: string
+  bgColor: string
+}
 export interface TableSettings {
   styleInitialVariables: styleProperties
   styleOneValue: styleProperties
@@ -5,7 +9,7 @@ export interface TableSettings {
   zoom: number
 }
 
-export interface styleProperties {
-  color: string
-  bgColor: string
+export interface TableData {
+  initialEntries: number
+  outputs: {[key: string]: number[]}
 }
