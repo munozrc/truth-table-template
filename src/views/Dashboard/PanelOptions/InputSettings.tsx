@@ -13,10 +13,11 @@ interface Props {
   minValueInput: number
   maxValueInput: number
   isEntry?: boolean
+  onlyInputColors?: boolean
 }
 
 const InputSettings: FC<Props> = (props) => {
-  const { labelValue, name, minValueInput, maxValueInput, isEntry = false } = props
+  const { labelValue, name, minValueInput, maxValueInput, isEntry = false, onlyInputColors = false } = props
   const { tableSettings, tableData, changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
   const numberItems = useField('number', initialValueInput(tableData, isEntry))
   const bgColor = useField('color', (tableSettings as any)[name].bgColor)
@@ -41,8 +42,8 @@ const InputSettings: FC<Props> = (props) => {
   }, [numberItems.value])
 
   return (
-    <HorizontalContainer labelValue={labelValue}>
-      <Input {...numberItems} max={maxValueInput} min={minValueInput} />
+    <HorizontalContainer labelValue={labelValue} center={onlyInputColors}>
+      {!onlyInputColors && <Input {...numberItems} max={maxValueInput} min={minValueInput} />}
       <InputColor {...bgColor} />
       <InputColor {...color} />
     </HorizontalContainer>
