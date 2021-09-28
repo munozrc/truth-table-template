@@ -6,7 +6,7 @@ import PanelResult from './PanelResult'
 import styles from './styles.module.css'
 
 const Dashboard: FC<{}> = () => {
-  const refTable = useRef<HTMLTableElement>()
+  const refTable = useRef<HTMLTableElement>(null)
 
   const handleCopyTable = (): void => {
     if (refTable.current !== null && typeof refTable.current !== 'undefined') {
