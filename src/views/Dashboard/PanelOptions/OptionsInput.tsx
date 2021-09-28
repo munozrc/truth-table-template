@@ -30,6 +30,9 @@ const OptionsInput: FC<Props> = ({ labelValue, name }) => {
   }, [color.value, bgColor.value])
 
   useEffect(() => {
+    const normalizeValue = parseInt(numberItems.value)
+    if (isNaN(normalizeValue)) return
+    if (normalizeValue <= 0) return
     changeNumberEntries(parseInt(numberItems.value))
   }, [numberItems.value])
 
