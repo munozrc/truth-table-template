@@ -1,11 +1,11 @@
 import { TableData, TableSettings } from './types'
-import { generateArrayNumbers } from './utils'
+import { generateArrayNumbersEmpty } from './utils'
 
 export const entriesNames = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 export const initialTableData: TableData = {
   initialEntries: ['A', 'B'],
-  outputs: { x: generateArrayNumbers(2) }
+  outputs: { x: generateArrayNumbersEmpty(2) }
 }
 
 export const defaultValues: TableSettings = {
