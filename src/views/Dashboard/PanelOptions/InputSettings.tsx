@@ -10,15 +10,15 @@ import { defaultValues } from '../../../config'
 interface Props {
   labelValue?: string
   name: string
-  minValueInput: string
-  maxValueInput: string
+  minValueInput: number
+  maxValueInput: number
   isEntry?: boolean
 }
 
 const InputSettings: FC<Props> = (props) => {
   const { labelValue, name, minValueInput, maxValueInput, isEntry = false } = props
   const { changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
-  const numberItems = useField('number', minValueInput)
+  const numberItems = useField('number', minValueInput.toString(10))
   const bgColor = useField('color', (defaultValues as any)[name].bgColor)
   const color = useField('color', (defaultValues as any)[name].color)
 
@@ -35,7 +35,7 @@ const InputSettings: FC<Props> = (props) => {
   useEffect(() => {
     const normalizeValue = parseInt(numberItems.value)
     if (isNaN(normalizeValue)) return
-    if (normalizeValue <= 0) return
+    if (normalizeValue <= 0 || normalizeValue > maxValueInput) return
     if (isEntry) changeNumberEntries(parseInt(numberItems.value))
     else changeNumberOutputs(parseInt(numberItems.value))
   }, [numberItems.value])

@@ -12,15 +12,15 @@ const PanelOptions: FC<{}> = () => {
         <InputSettings
           labelValue='Número de Entradas'
           name='stylesEntries'
-          minValueInput='2'
-          maxValueInput='6'
+          minValueInput={2}
+          maxValueInput={6}
           isEntry
         />
         <InputSettings
           labelValue='Número de Salidas'
           name='stylesOutputs'
-          minValueInput='1'
-          maxValueInput='6'
+          minValueInput={1}
+          maxValueInput={6}
         />
       </div>
     </section>
