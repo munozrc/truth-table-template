@@ -5,7 +5,7 @@ interface Props {
   labelValue?: string
 }
 
-const GroupInputs: FC<Props> = ({ labelValue = '', children }) => {
+const HorizontalContainer: FC<Props> = ({ labelValue = '', children }) => {
   return (
     <section className={styles.wrapper}>
       <label className={styles.label}>{labelValue}</label>
@@ -16,4 +16,4 @@ const GroupInputs: FC<Props> = ({ labelValue = '', children }) => {
   )
 }
 
-export default GroupInputs
+export default HorizontalContainer

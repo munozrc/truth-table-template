@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useEffect } from 'react'
 import debounce from 'lodash.debounce'
-import GroupInputs from '../../../components/GroupInputs'
+import HorizontalContainer from '../../../components/HorizontalContainer'
 import Input from '../../../components/Input'
 import InputColor from '../../../components/InputColor'
 import useField from '../../../hooks/useField'
@@ -37,11 +37,11 @@ const OptionsInput: FC<Props> = ({ labelValue, name }) => {
   }, [numberItems.value])
 
   return (
-    <GroupInputs labelValue={labelValue}>
+    <HorizontalContainer labelValue={labelValue}>
       <Input {...numberItems} max='6' min='2' />
       <InputColor {...bgColor} />
       <InputColor {...color} />
-    </GroupInputs>
+    </HorizontalContainer>
   )
 }
 
