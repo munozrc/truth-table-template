@@ -5,7 +5,10 @@ import { styleProperties, TableData } from '../types'
 
 interface ReturnType {
   stylesEntries: styleProperties
-  stylesOutputs: styleProperties
+  stylesInputValueOne: styleProperties
+  stylesInputValueZero: styleProperties
+  stylesOutputValueOne: styleProperties
+  stylesOutputValueZero: styleProperties
   tableData: TableData
   changeStyles: (element: string, values: styleProperties) => void
   changeNumberEntries: (value: number) => void
@@ -13,7 +16,7 @@ interface ReturnType {
 
 function useTable (): ReturnType {
   const { tableSettings, tableData, changeTableSettings, changeTableData } = useContext(TableContext)
-  const { stylesEntries, stylesOutputs } = tableSettings
+  const { stylesEntries, stylesInputValueOne, stylesInputValueZero, stylesOutputValueOne, stylesOutputValueZero } = tableSettings
 
   const changeStyles = useCallback((element: string, values: styleProperties) => {
     changeTableSettings(prev => {
@@ -32,7 +35,16 @@ function useTable (): ReturnType {
     })
   }, [])
 
-  return { stylesEntries, stylesOutputs, tableData, changeStyles, changeNumberEntries }
+  return {
+    stylesEntries,
+    stylesInputValueOne,
+    stylesInputValueZero,
+    stylesOutputValueOne,
+    stylesOutputValueZero,
+    tableData,
+    changeStyles,
+    changeNumberEntries
+  }
 }
 
 export default useTable

@@ -14,7 +14,7 @@ interface Props {
 const OptionsInput: FC<Props> = ({ labelValue, name }) => {
   const { changeStyles, changeNumberEntries } = useTable()
   const numberItems = useField('number', '2')
-  const bgColor = useField('color', '#04aa6d')
+  const bgColor = useField('color', '#000000')
   const color = useField('color', '#fafafa')
 
   const changeHandler = (color: string, bgColor: string): void => {

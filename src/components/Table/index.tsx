@@ -6,12 +6,22 @@ import styles from './styles.module.css'
 
 export interface PropsTable {
   stylesEntries: styleProperties
-  stylesOutputs: styleProperties
+  stylesInputValueOne: styleProperties
+  stylesInputValueZero: styleProperties
+  stylesOutputValueOne: styleProperties
+  stylesOutputValueZero: styleProperties
   tableData: TableData
 }
 
 const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
-  const { stylesEntries, tableData } = props
+  const {
+    stylesEntries,
+    stylesInputValueOne,
+    stylesInputValueZero,
+    stylesOutputValueOne,
+    stylesOutputValueZero,
+    tableData
+  } = props
   return (
     <table ref={ref} className={styles.table}>
       <tbody>
@@ -41,20 +51,26 @@ const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
         {
           generateArrayNumbers(tableData.initialEntries.length).map(value => {
             const binaryNumber = parseBinary(value, tableData.initialEntries.length)
-            console.log({ binaryNumber, value })
+            const isZero = (value: string): styleProperties => parseInt(value) === 0 ? stylesInputValueZero : stylesInputValueOne
             return (
               <tr key={`row-${value}`}>
                 {
                   binaryNumber.map((digit, index) => (
-                    <td key={`number-${index}-${digit}`} className={styles.td}>{digit}</td>
+                    <td
+                      key={`number-${index}-${digit}`}
+                      className={styles.td}
+                      style={{ backgroundColor: isZero(digit).bgColor, color: isZero(digit).color }}
+                    >
+                      {digit}
+                    </td>
                   ))
                 }
                 {
                   Object.keys(tableData.outputs).map((output) => (
                     <OutputItem
                       key={`hey-${output}`}
-                      stylesOneValue={stylesEntries}
-                      stylesZeroValue={stylesEntries}
+                      stylesOneValue={stylesOutputValueOne}
+                      stylesZeroValue={stylesOutputValueZero}
                       value={tableData.outputs[output][value]}
                     />
                   ))

@@ -8,14 +8,24 @@ interface Props {
 }
 
 const PanelResult: FC<Props> = ({ refTable }) => {
-  const { stylesEntries, stylesOutputs, tableData } = useTable()
+  const {
+    stylesEntries,
+    stylesInputValueZero,
+    stylesInputValueOne,
+    stylesOutputValueZero,
+    stylesOutputValueOne,
+    tableData
+  } = useTable()
   return (
     <section className={styles.wrapper}>
       <div className={styles.wrapper__table}>
         <Table
           ref={refTable}
           stylesEntries={stylesEntries}
-          stylesOutputs={stylesOutputs}
+          stylesInputValueZero={stylesInputValueZero}
+          stylesInputValueOne={stylesInputValueOne}
+          stylesOutputValueZero={stylesOutputValueZero}
+          stylesOutputValueOne={stylesOutputValueOne}
           tableData={tableData}
         />
       </div>
