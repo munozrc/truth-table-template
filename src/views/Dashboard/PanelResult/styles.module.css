@@ -1,6 +1,6 @@
 .wrapper {
   grid-area: result;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .wrapper__table {
@@ -8,6 +8,6 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100% - 60px);
-  min-width: calc(100% - 60px);
-  margin: 30px;
+  min-width: max-content;
+  font-size: 28px;
 }
