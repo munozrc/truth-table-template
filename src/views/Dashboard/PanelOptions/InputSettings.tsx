@@ -5,7 +5,6 @@ import Input from '../../../components/Input'
 import InputColor from '../../../components/InputColor'
 import useField from '../../../hooks/useField'
 import useTable from '../../../hooks/useTable'
-import { defaultValues } from '../../../config'
 
 interface Props {
   labelValue?: string
@@ -17,10 +16,10 @@ interface Props {
 
 const InputSettings: FC<Props> = (props) => {
   const { labelValue, name, minValueInput, maxValueInput, isEntry = false } = props
-  const { changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
+  const { tableSettings, changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
   const numberItems = useField('number', minValueInput.toString(10))
-  const bgColor = useField('color', (defaultValues as any)[name].bgColor)
-  const color = useField('color', (defaultValues as any)[name].color)
+  const bgColor = useField('color', (tableSettings as any)[name].bgColor)
+  const color = useField('color', (tableSettings as any)[name].color)
 
   const changeHandler = (color: string, bgColor: string): void => {
     changeStyles(name, { color, bgColor })

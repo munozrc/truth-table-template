@@ -2,7 +2,7 @@ import { useCallback, useContext } from 'react'
 import { entriesNames, outputsNames } from '../config'
 import TableContext from '../contexts/TableContext'
 import { styleProperties, TableData, TableSettings } from '../types'
-import { generateArrayNumbersEmpty } from '../utils'
+import { generateArrayNumbersEmpty, saveDataLocalStorage } from '../utils'
 
 interface ReturnType {
   tableSettings: TableSettings
@@ -19,6 +19,7 @@ function useTable (): ReturnType {
   const changeStyles = useCallback((element: string, values: styleProperties) => {
     changeTableSettings(prev => {
       const newSettings = { ...prev, [element]: values }
+      saveDataLocalStorage(newSettings, 'TableSettingsTTT')
       return newSettings
     })
   }, [])
