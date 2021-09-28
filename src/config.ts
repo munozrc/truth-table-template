@@ -9,9 +9,10 @@ export const initialTableData: TableData = {
 }
 
 export const defaultValues: TableSettings = {
-  stylesEntries: { color: '#fafafa', bgColor: '#04aa6d' },
-  stylesOutputs: { color: '#fafafa', bgColor: '#04aa6d' },
-  stylesOneValue: { color: '#fafafa', bgColor: '#04aa6d' },
-  stylesZeroValue: { color: '#fafafa', bgColor: '#04aa6d' },
+  stylesEntries: { color: '#fafafa', bgColor: '#121212' },
+  stylesInputValueOne: { color: '#fafafa', bgColor: '#0059ff' },
+  stylesInputValueZero: { color: '#fafafa', bgColor: '#3d3d3d' },
+  stylesOutputValueOne: { color: '#121212', bgColor: '#ffdd00' },
+  stylesOutputValueZero: { color: '#fafafa', bgColor: '#a63636' },
   zoom: 1.4
 }

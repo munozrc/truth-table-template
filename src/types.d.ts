@@ -4,9 +4,10 @@ export interface styleProperties {
 }
 export interface TableSettings {
   stylesEntries: styleProperties
-  stylesOutputs: styleProperties
-  stylesOneValue: styleProperties
-  stylesZeroValue: styleProperties
+  stylesInputValueOne: styleProperties
+  stylesInputValueZero: styleProperties
+  stylesOutputValueOne: styleProperties
+  stylesOutputValueZero: styleProperties
   zoom: number
 }
 
