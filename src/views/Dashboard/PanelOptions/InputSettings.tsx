@@ -5,6 +5,7 @@ import Input from '../../../components/Input'
 import InputColor from '../../../components/InputColor'
 import useField from '../../../hooks/useField'
 import useTable from '../../../hooks/useTable'
+import { initialValueInput } from '../../../utils/TableMethods'
 
 interface Props {
   labelValue?: string
@@ -16,8 +17,8 @@ interface Props {
 
 const InputSettings: FC<Props> = (props) => {
   const { labelValue, name, minValueInput, maxValueInput, isEntry = false } = props
-  const { tableSettings, changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
-  const numberItems = useField('number', minValueInput.toString(10))
+  const { tableSettings, tableData, changeStyles, changeNumberOutputs, changeNumberEntries } = useTable()
+  const numberItems = useField('number', initialValueInput(tableData, isEntry))
   const bgColor = useField('color', (tableSettings as any)[name].bgColor)
   const color = useField('color', (tableSettings as any)[name].color)
 

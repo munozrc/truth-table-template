@@ -1,7 +1,6 @@
 import React, { createContext, useState, FC, SetStateAction, Dispatch } from 'react'
-import { initialTableData } from '../config'
 import { TableData, TableSettings } from '../types'
-import { loadTableSettings } from '../utils/TableMethods'
+import { loadTableData, loadTableSettings } from '../utils/TableMethods'
 
 interface ITableContext {
   tableSettings: TableSettings
@@ -15,7 +14,7 @@ const TableContext = createContext({} as ITableContext)
 
 const TableProvider: FC = ({ children }) => {
   const [tableSettings, changeTableSettings] = useState<TableSettings>(loadTableSettings())
-  const [tableData, changeTableData] = useState<TableData>(initialTableData)
+  const [tableData, changeTableData] = useState<TableData>(loadTableData())
   return (
     <TableContext.Provider
       value={{

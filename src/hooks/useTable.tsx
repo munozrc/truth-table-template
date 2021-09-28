@@ -1,5 +1,5 @@
 import { useCallback, useContext } from 'react'
-import { entriesNames, outputsNames } from '../config'
+import { defaultValues, entriesNames, initialTableData, outputsNames } from '../config'
 import TableContext from '../contexts/TableContext'
 import { styleProperties, TableData, TableSettings } from '../types'
 import { generateArrayNumbersEmpty, saveDataLocalStorage } from '../utils'
@@ -11,6 +11,7 @@ interface ReturnType {
   changeNumberEntries: (value: number) => void
   changeNumberOutputs: (value: number) => void
   changeOutputValue: (output: string, pos: number) => void
+  resetSettingsAndAllData: () => void
 }
 
 function useTable (): ReturnType {
@@ -33,7 +34,9 @@ function useTable (): ReturnType {
       const newOutputs = prev.outputs
 
       outputs.forEach((output) => { newOutputs[output] = generateArrayNumbersEmpty(value) })
-      return { initialEntries: newValuesEntries, outputs: { ...newOutputs } }
+      const newData = { initialEntries: newValuesEntries, outputs: { ...newOutputs } }
+      saveDataLocalStorage(newData, 'TableDataTTT')
+      return newData
     })
   }, [])
 
@@ -50,11 +53,15 @@ function useTable (): ReturnType {
 
       if (newNamesOutputs.length !== 0) {
         newNamesOutputs.forEach(name => { newObj[name] = generateArrayNumbersEmpty(numberEntries) })
-        return { ...prev, outputs: { ...prev.outputs, ...newObj } }
+        const newData = { ...prev, outputs: { ...prev.outputs, ...newObj } }
+        saveDataLocalStorage(newData, 'TableDataTTT')
+        return newData
       }
 
       outputs.forEach((output, i) => { if (i < value) newObj[output] = prev.outputs[output] })
-      return { ...prev, outputs: { ...newObj } }
+      const newData = { ...prev, outputs: { ...newObj } }
+      saveDataLocalStorage(newData, 'TableDataTTT')
+      return newData
     })
   }, [])
 
@@ -67,8 +74,17 @@ function useTable (): ReturnType {
         return value
       })
       const newObj = { ...prev.outputs, [output]: newOutput }
-      return { ...prev, outputs: newObj }
+      const newData = { ...prev, outputs: newObj }
+      saveDataLocalStorage(newData, 'TableDataTTT')
+      return newData
     })
+  }, [])
+
+  const resetSettingsAndAllData = useCallback(() => {
+    saveDataLocalStorage(defaultValues, 'TableSettingsTTT')
+    saveDataLocalStorage(initialTableData, 'TableDataTTT')
+    changeTableSettings(defaultValues)
+    changeTableData(initialTableData)
   }, [])
 
   return {
@@ -77,7 +93,8 @@ function useTable (): ReturnType {
     changeStyles,
     changeNumberEntries,
     changeNumberOutputs,
-    changeOutputValue
+    changeOutputValue,
+    resetSettingsAndAllData
   }
 }
 
