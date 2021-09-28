@@ -12,8 +12,8 @@ interface Props {
 }
 
 const OptionsInput: FC<Props> = ({ labelValue, name }) => {
-  const { changeStyles } = useTable()
-  const value = useField('number', '2')
+  const { changeStyles, changeNumberEntries } = useTable()
+  const numberItems = useField('number', '2')
   const bgColor = useField('color', '#04aa6d')
   const color = useField('color', '#fafafa')
 
@@ -29,9 +29,13 @@ const OptionsInput: FC<Props> = ({ labelValue, name }) => {
     debouncedChangeHandler(color.value, bgColor.value)
   }, [color.value, bgColor.value])
 
+  useEffect(() => {
+    changeNumberEntries(parseInt(numberItems.value))
+  }, [numberItems.value])
+
   return (
     <GroupInputs labelValue={labelValue}>
-      <Input {...value} />
+      <Input {...numberItems} max='6' min='2' />
       <InputColor {...bgColor} />
       <InputColor {...color} />
     </GroupInputs>
