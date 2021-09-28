@@ -11,7 +11,8 @@ interface Props {
   labelValue?: string
   name: string
 }
-const OptionsInput: FC<Props> = ({ labelValue, name }) => {
+
+const InputSettings: FC<Props> = ({ labelValue, name }) => {
   const { changeStyles, changeNumberEntries } = useTable()
   const numberItems = useField('number', '2')
   const bgColor = useField('color', (defaultValues as any)[name].bgColor)
@@ -21,9 +22,7 @@ const OptionsInput: FC<Props> = ({ labelValue, name }) => {
     changeStyles(name, { color, bgColor })
   }
 
-  const debouncedChangeHandler = useCallback(
-    debounce(changeHandler, 300)
-    , [])
+  const debouncedChangeHandler = useCallback(debounce(changeHandler, 300), [])
 
   useEffect(() => {
     debouncedChangeHandler(color.value, bgColor.value)
@@ -45,4 +44,4 @@ const OptionsInput: FC<Props> = ({ labelValue, name }) => {
   )
 }
 
-export default OptionsInput
+export default InputSettings

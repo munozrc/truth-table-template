@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import OptionsInput from './OptionsInput'
+import InputSettings from './InputSettings'
 import styles from './styles.module.css'
 
 const PanelOptions: FC<{}> = () => {
@@ -9,7 +9,7 @@ const PanelOptions: FC<{}> = () => {
         <h4 className={styles.header__title}>Opciones</h4>
       </header>
       <div className={styles.panel__wrapper}>
-        <OptionsInput labelValue='Entradas Iniciales' name='stylesEntries' />
+        <InputSettings labelValue='Entradas Iniciales' name='stylesEntries' />
       </div>
     </section>
   )
