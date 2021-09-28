@@ -8,6 +8,7 @@
   border: 1px solid #ddd;
   width: 34px;
   height: 34px;
+  text-align: center;
 }
 
 .th {
@@ -15,10 +16,11 @@
   color: white;
 }
 
-.td, .td__expression {
-  text-align: center;
-}
-
 .td__expression {
   width: 80px;
+}
+
+.td__output {
+  cursor: pointer;
+  font-weight: bold;
 }

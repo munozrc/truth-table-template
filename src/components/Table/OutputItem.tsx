@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 const OutputItem: FC<{}> = () => {
   return (
     <>
-      <td className={styles.td}>0</td>
+      <td className={`${styles.td} ${styles.td__output}`}>0</td>
       <td className={styles.td__expression} />
     </>
   )
