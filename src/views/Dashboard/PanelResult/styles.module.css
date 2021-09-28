@@ -9,4 +9,13 @@
   justify-content: center;
   min-height: calc(100% - 60px);
   min-width: max-content;
+  font-size: 22px;
+}
+
+.wrapper_inset {
+  display: flex;
+  padding: 16px;
+  margin: 14px;
+  background-color: #fff;
+  border-radius: 8px;
 }

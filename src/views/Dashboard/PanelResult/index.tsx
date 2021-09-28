@@ -19,15 +19,17 @@ const PanelResult: FC<Props> = ({ refTable }) => {
   return (
     <section className={styles.wrapper}>
       <div className={styles.wrapper__table}>
-        <Table
-          ref={refTable}
-          stylesEntries={stylesEntries}
-          stylesInputValueZero={stylesInputValueZero}
-          stylesInputValueOne={stylesInputValueOne}
-          stylesOutputValueZero={stylesOutputValueZero}
-          stylesOutputValueOne={stylesOutputValueOne}
-          tableData={tableData}
-        />
+        <div className={styles.wrapper_inset}>
+          <Table
+            ref={refTable}
+            stylesEntries={stylesEntries}
+            stylesInputValueZero={stylesInputValueZero}
+            stylesInputValueOne={stylesInputValueOne}
+            stylesOutputValueZero={stylesOutputValueZero}
+            stylesOutputValueOne={stylesOutputValueOne}
+            tableData={tableData}
+          />
+        </div>
       </div>
     </section>
   )

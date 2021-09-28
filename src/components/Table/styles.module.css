@@ -2,12 +2,10 @@
   min-width: max-content;
   border-collapse: collapse;
   background-color: #fafafa;
-  margin: 30px 60px;
-  font-size: 28px;
 }
 
 .th, .td, .td__expression {
-  border: 1px solid #ddd;
+  border: 1px solid rgb(0, 0, 0);
   width: 2.125em;
   height: 2.125em;
   text-align: center;
