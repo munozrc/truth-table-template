@@ -6,7 +6,7 @@ import OutputItem from './OutputItem'
 import styles from './styles.module.css'
 
 const Table = forwardRef<HTMLTableElement>((_props, ref) => {
-  const { tableSettings, tableData } = useTable()
+  const { tableSettings, tableData, changeOutputValue } = useTable()
   const { stylesEntries, stylesOutputs, stylesInputValueOne, stylesInputValueZero, stylesOutputValueOne, stylesOutputValueZero } = tableSettings
   return (
     <table ref={ref} className={styles.table}>
@@ -55,9 +55,12 @@ const Table = forwardRef<HTMLTableElement>((_props, ref) => {
                   Object.keys(tableData.outputs).map((output) => (
                     <OutputItem
                       key={`hey-${output}`}
+                      index={value}
+                      outputName={output}
                       stylesOneValue={stylesOutputValueOne}
                       stylesZeroValue={stylesOutputValueZero}
                       value={tableData.outputs[output][value]}
+                      changeOutputValue={changeOutputValue}
                     />
                   ))
                 }

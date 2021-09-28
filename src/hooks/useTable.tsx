@@ -10,6 +10,7 @@ interface ReturnType {
   changeStyles: (element: string, values: styleProperties) => void
   changeNumberEntries: (value: number) => void
   changeNumberOutputs: (value: number) => void
+  changeOutputValue: (output: string, pos: number) => void
 }
 
 function useTable (): ReturnType {
@@ -54,12 +55,26 @@ function useTable (): ReturnType {
     })
   }, [])
 
+  const changeOutputValue = useCallback((output: string, pos: number) => {
+    console.log({ output, pos })
+    changeTableData(prev => {
+      const newOutput = prev.outputs[output].map((value, index) => {
+        if (index === pos && value === 1) return 0
+        if (index === pos && value === 0) return 1
+        return value
+      })
+      const newObj = { ...prev.outputs, [output]: newOutput }
+      return { ...prev, outputs: newObj }
+    })
+  }, [])
+
   return {
     tableSettings,
     tableData,
     changeStyles,
     changeNumberEntries,
-    changeNumberOutputs
+    changeNumberOutputs,
+    changeOutputValue
   }
 }
 
