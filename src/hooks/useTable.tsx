@@ -2,6 +2,7 @@ import { useCallback, useContext } from 'react'
 import { entriesNames } from '../config'
 import TableContext from '../contexts/TableContext'
 import { styleProperties, TableData } from '../types'
+import { generateArrayNumbersEmpty } from '../utils'
 
 interface ReturnType {
   stylesEntries: styleProperties
@@ -31,7 +32,7 @@ function useTable (): ReturnType {
       if (isEqualToOldValue) return prev
 
       const newValuesEntries: string[] = entriesNames.split('').filter((_letter, index) => index < value)
-      return { ...prev, initialEntries: newValuesEntries }
+      return { initialEntries: newValuesEntries, outputs: { x: generateArrayNumbersEmpty(value) } }
     })
   }, [])
 
