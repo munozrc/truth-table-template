@@ -10,6 +10,7 @@ export const initialTableData: TableData = {
 
 export const defaultValues: TableSettings = {
   stylesEntries: { color: '#fafafa', bgColor: '#121212' },
+  stylesOutputs: { color: '#fafafa', bgColor: '#121212' },
   stylesInputValueOne: { color: '#fafafa', bgColor: '#0059ff' },
   stylesInputValueZero: { color: '#fafafa', bgColor: '#3d3d3d' },
   stylesOutputValueOne: { color: '#121212', bgColor: '#ffdd00' },

@@ -4,6 +4,7 @@ export interface styleProperties {
 }
 export interface TableSettings {
   stylesEntries: styleProperties
+  stylesOutputs: styleProperties
   stylesInputValueOne: styleProperties
   stylesInputValueZero: styleProperties
   stylesOutputValueOne: styleProperties

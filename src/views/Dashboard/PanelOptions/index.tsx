@@ -10,6 +10,7 @@ const PanelOptions: FC<{}> = () => {
       </header>
       <div className={styles.panel__wrapper}>
         <InputSettings labelValue='Entradas Iniciales' name='stylesEntries' />
+        <InputSettings labelValue='Número de Salidas' name='stylesOutputs' />
       </div>
     </section>
   )

@@ -1,15 +1,11 @@
 import { useCallback, useContext } from 'react'
 import { entriesNames } from '../config'
 import TableContext from '../contexts/TableContext'
-import { styleProperties, TableData } from '../types'
+import { styleProperties, TableData, TableSettings } from '../types'
 import { generateArrayNumbersEmpty } from '../utils'
 
 interface ReturnType {
-  stylesEntries: styleProperties
-  stylesInputValueOne: styleProperties
-  stylesInputValueZero: styleProperties
-  stylesOutputValueOne: styleProperties
-  stylesOutputValueZero: styleProperties
+  tableSettings: TableSettings
   tableData: TableData
   changeStyles: (element: string, values: styleProperties) => void
   changeNumberEntries: (value: number) => void
@@ -17,7 +13,6 @@ interface ReturnType {
 
 function useTable (): ReturnType {
   const { tableSettings, tableData, changeTableSettings, changeTableData } = useContext(TableContext)
-  const { stylesEntries, stylesInputValueOne, stylesInputValueZero, stylesOutputValueOne, stylesOutputValueZero } = tableSettings
 
   const changeStyles = useCallback((element: string, values: styleProperties) => {
     changeTableSettings(prev => {
@@ -37,11 +32,7 @@ function useTable (): ReturnType {
   }, [])
 
   return {
-    stylesEntries,
-    stylesInputValueOne,
-    stylesInputValueZero,
-    stylesOutputValueOne,
-    stylesOutputValueZero,
+    tableSettings,
     tableData,
     changeStyles,
     changeNumberEntries

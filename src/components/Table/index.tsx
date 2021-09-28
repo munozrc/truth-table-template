@@ -1,27 +1,13 @@
 import React, { forwardRef } from 'react'
-import { styleProperties, TableData } from '../../types'
+import useTable from '../../hooks/useTable'
+import { styleProperties } from '../../types'
 import { generateArrayNumbers, parseBinary } from '../../utils'
 import OutputItem from './OutputItem'
 import styles from './styles.module.css'
 
-export interface PropsTable {
-  stylesEntries: styleProperties
-  stylesInputValueOne: styleProperties
-  stylesInputValueZero: styleProperties
-  stylesOutputValueOne: styleProperties
-  stylesOutputValueZero: styleProperties
-  tableData: TableData
-}
-
-const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
-  const {
-    stylesEntries,
-    stylesInputValueOne,
-    stylesInputValueZero,
-    stylesOutputValueOne,
-    stylesOutputValueZero,
-    tableData
-  } = props
+const Table = forwardRef<HTMLTableElement>((_props, ref) => {
+  const { tableSettings, tableData } = useTable()
+  const { stylesEntries, stylesOutputs, stylesInputValueOne, stylesInputValueZero, stylesOutputValueOne, stylesOutputValueZero } = tableSettings
   return (
     <table ref={ref} className={styles.table}>
       <tbody>
@@ -41,7 +27,7 @@ const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
               <th
                 key={`th-${index}`}
                 className={styles.th}
-                style={{ backgroundColor: stylesEntries.bgColor, color: stylesEntries.color }}
+                style={{ backgroundColor: stylesOutputs.bgColor, color: stylesOutputs.color }}
                 colSpan={2}
               >{output.toUpperCase()}
               </th>
