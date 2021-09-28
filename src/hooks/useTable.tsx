@@ -25,11 +25,14 @@ function useTable (): ReturnType {
 
   const changeNumberEntries = useCallback((value: number) => {
     changeTableData(prev => {
-      const isEqualToOldValue = prev.initialEntries.length === value
-      if (isEqualToOldValue) return prev
+      if (prev.initialEntries.length === value) return prev
 
+      const outputs = Object.keys(prev.outputs)
       const newValuesEntries: string[] = entriesNames.split('').filter((_, i) => i < value)
-      return { initialEntries: newValuesEntries, outputs: { x: generateArrayNumbersEmpty(value) } }
+      const newOutputs = prev.outputs
+
+      outputs.forEach((output) => { newOutputs[output] = generateArrayNumbersEmpty(value) })
+      return { initialEntries: newValuesEntries, outputs: { ...newOutputs } }
     })
   }, [])
 
@@ -40,8 +43,7 @@ function useTable (): ReturnType {
       const numberEntries = prev.initialEntries.length
       const arrayOfNames = outputsNames.split('')
 
-      const isEqualToOldValue = outputs.length === value
-      if (isEqualToOldValue) return prev
+      if (outputs.length === value) return prev
 
       const newNamesOutputs = arrayOfNames.filter((_, i) => i >= outputs.length && i < value)
 
