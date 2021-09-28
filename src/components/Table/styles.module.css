@@ -6,8 +6,8 @@
 
 .th, .td, .td__expression {
   border: 1px solid #ddd;
-  width: 34px;
-  height: 34px;
+  width: 2.125em;
+  height: 2.125em;
   text-align: center;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .td__expression {
-  width: 80px;
+  width: 5em;
 }
 
 .td__output {
