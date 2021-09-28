@@ -1,6 +1,8 @@
 import { TableData, TableSettings } from './types'
 import { generateArrayNumbers } from './utils'
 
+export const entriesNames = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 export const initialTableData: TableData = {
   initialEntries: ['A', 'B'],
   outputs: { x: generateArrayNumbers(2) }
