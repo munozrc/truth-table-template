@@ -3,6 +3,7 @@
   border-collapse: collapse;
   background-color: #fafafa;
   margin: 30px 60px;
+  font-size: 28px;
 }
 
 .th, .td, .td__expression {
