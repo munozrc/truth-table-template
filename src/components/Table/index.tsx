@@ -51,7 +51,12 @@ const Table = forwardRef<HTMLTableElement, PropsTable>((props, ref) => {
                 }
                 {
                   Object.keys(tableData.outputs).map((output) => (
-                    <OutputItem key={`hey-${output}`} />
+                    <OutputItem
+                      key={`hey-${output}`}
+                      stylesOneValue={stylesEntries}
+                      stylesZeroValue={stylesEntries}
+                      value={tableData.outputs[output][value]}
+                    />
                   ))
                 }
               </tr>
