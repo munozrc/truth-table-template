@@ -5,17 +5,17 @@ import Input from '../../../components/Input'
 import InputColor from '../../../components/InputColor'
 import useField from '../../../hooks/useField'
 import useTable from '../../../hooks/useTable'
+import { defaultValues } from '../../../config'
 
 interface Props {
   labelValue?: string
   name: string
 }
-
 const OptionsInput: FC<Props> = ({ labelValue, name }) => {
   const { changeStyles, changeNumberEntries } = useTable()
   const numberItems = useField('number', '2')
-  const bgColor = useField('color', '#000000')
-  const color = useField('color', '#fafafa')
+  const bgColor = useField('color', (defaultValues as any)[name].bgColor)
+  const color = useField('color', (defaultValues as any)[name].color)
 
   const changeHandler = (color: string, bgColor: string): void => {
     changeStyles(name, { color, bgColor })
